@@ -1,0 +1,538 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #000;
+    color: white;
+    min-height: 550vh;
+    position: relative; /* Important for absolute positioning */
+}
+
+.blur-element {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.6;
+    background-image: linear-gradient(to right, #8F1B8B 60%, #0CFAF5 40%);
+}
+
+.blur-element:nth-child(1) {
+    width: 200px;
+    height: 200px;
+    top: 5%;
+    left: 10%;
+}
+
+.blur-element:nth-child(2) {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    right: 10%;
+    z-index: -9;
+}
+
+.blur-element:nth-child(3) {
+    width: 400px;
+    height: 400px;
+    top: 30%;
+    left: 20%;
+}
+
+.blur-element:nth-child(4) {
+    width: 400px;
+    height: 400px;
+    top: 70%;
+    left: 20%;
+}
+
+.blur-element:nth-child(5) {
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 60%;
+}
+
+.content {
+    padding: 50px;
+    min-height: 100vh;
+}                            /* Background Color */
+
+/* Define a global container */
+.container-global {
+    max-width: 1200px; /* Set a common maximum width */
+    width: 100%; /* Full width for responsiveness */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Add consistent padding */
+    box-sizing: border-box; /* Ensure consistent box model */
+}
+
+.navbar {
+    background-color: transparent;
+    backdrop-filter: blur(15px) saturate(1.2);
+    -webkit-backdrop-filter: blur(15px) saturate(1.2);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    transition: background-color 0.3s ease;
+}
+
+
+.navbar .container {
+    padding: 8px;
+    display: flex;
+}
+
+.navbar-brand h3 {
+    background-image: linear-gradient(to right, #2980b9, #8e44ad); /* Example gradient */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback for browsers that don't support background-clip */
+    font-weight: bold; /* Optional: Adjust font weight */
+    margin: 0%; /* Remove default h2 margins */
+    display: inline-block; /* Prevent the h2 from taking full width */
+}
+
+.navbar-light .navbar-nav {
+    gap: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #ffffff;
+    font-weight: 00;
+    position: relative;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #cc00ff;
+    transform: translateY(-2px);
+}
+
+.navbar-light .navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #bf00ff;
+    transition: width 0.3s ease;
+}
+
+.navbar-light .navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+.btn-gradient {
+  background-image: linear-gradient(to right, rgb(1 134 218), rgb(182 49 167));
+  border: 0;
+  font-weight: 900;
+  color: rgba(var(--text-color));
+}
+
+
+.hero-section {
+    padding: 120px 110px;
+}
+
+.hero-section h1 {
+    font-weight: 550;
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+.hero-section span{
+    color: #cc00ff;
+}
+
+.hero-section p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #cccccc;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.hero-image {
+    position: relative;
+    display: flex;
+    height: 60vh;
+    max-width: 80%;
+    left: 25%;
+    background-image:url('Grid.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 0;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 80px 20px; /* Reduce padding on mobile */
+    }
+    .hero-section h1 {
+        font-size: 1.3rem;
+        max-width: 100%;
+        padding: 0% 0%; /* Reduce the size of the heading */
+    }
+
+    .hero-section p {
+        max-width: 100%;
+        font-size: 1rem; /* Reduce the size of the paragraph */
+    }
+
+    .hero-image {
+        height: 30vh; /* Reduce the height of the hero image on mobile */
+        align-items: center; /* Center the image on mobile */
+        max-width: 100%; /* Reduce the width of the hero image */
+    }
+
+    .hero-image img {
+        width: 80%; /* Reduce the profile image size on mobile */
+        height: 80%; /* Reduce the height of the profile image */
+    }
+
+    .hero-section .static-text {
+        font-size: 2rem; /* Increase the font size of the static text */
+    }
+
+    .hero-section .typed-text {
+        font-size: 2rem; /* Increase the font size of the typed text */
+    }
+    .hero-section .social-button{
+        height: 2rem;
+        width: 2rem;
+        font-size: small;
+    }
+}
+
+.static-text {
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 3rem;
+}
+
+.typed-text {
+    display: inline-block;
+    font-size: 3rem;
+    background-image: linear-gradient(to right, #8F1B8B, #0CFAF5); /* Linear gradient */
+    -webkit-background-clip: text; /* Clip gradient to text */
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap; /* Important to prevent wrapping */
+}
+#cursor{
+    animation: blink .75s step-end infinite;
+}
+@keyframes blink{
+    from,to{color: transparent;}
+    50%{color: black;}
+}
+
+/* Container for buttons */
+.button-row {
+    display: flex; /* Align items in a row */
+    justify-content: center; /* Center buttons horizontally */
+    gap: 20px; /* Add space between buttons */
+    margin-top: 20px; /* Add margin at the top for spacing */
+}
+
+/* Style for individual buttons */
+/* Container for buttons */
+.button-row {
+    display: flex; /* Align items in a row */ /* Center buttons horizontally */
+    gap: 20px; /* Add space between buttons */
+    margin-top: 20px;/* Add margin at the top for spacing */
+    justify-content: flex-start;
+}
+
+/* Style for individual buttons with glass and glow effect */
+.social-button {
+    display: flex; /* Use Flexbox for centering text inside the button */
+    align-items: center; /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
+    width: 3rem; /* Width of the button */
+    height: 3rem; /* Height of the button */
+    border-radius: 50%; /* Make buttons circular */
+    background: rgba(255, 255, 255, 0.2); /* Transparent white background */
+    backdrop-filter: blur(10px); /* Glass blur effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    color: white; /* Text color */
+    font-size: 24px; /* Font size */
+    font-weight: bold; /* Bold text */
+    text-decoration: none; /* Remove underline */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
+}
+
+/* Hover effect with pink glow */
+.social-button:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    background: rgba(255, 255, 255, 0.3); /* Slightly brighter background */
+    border: 1px solid rgba(255, 20, 147, 0.5); /* Pink border */
+    box-shadow: 0 0 15px rgba(255, 20, 147, 0.8), /* Pink glow */
+                0 0 30px rgba(255, 20, 147, 0.6),
+                0 0 45px rgba(255, 20, 147, 0.4); /* Multi-layered glow */
+}
+
+
+.card {
+    border: none;
+    height: ;
+    width: 100%;
+    align-items: center;
+    padding-top: 10%;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2); /* Transparent white background */
+    backdrop-filter: blur(10px); /* Glass blur effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Styling */
+.btn-gradient {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+    box-shadow: 0 0 15px rgba(102, 51, 153, 0.6);
+    transform: scale(1.05);
+}
+
+/* Responsive Card Image */
+
+.card-img-top{
+    height: 8rem;
+    width: 10rem;
+    
+}
+
+.card-text{
+    font-size: 1rem;
+}
+
+
+
+/* Mobile Adjustments */
+@media (max-width: 576px) {
+    .card {
+        margin-bottom: 20px;
+    }
+}
+
+/* Education Section Styling */
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Timeline Styles */
+.timeline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.timeline-item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.timeline-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2); /* Transparent white background */
+    backdrop-filter: blur(10px); /* Glass blur effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.timeline-circle {
+    width: 30px;
+    height: 30px;
+    background-color: #6a11cb;
+    border-radius: 50%;
+    position: absolute;
+    top: -15px;
+}
+
+.timeline-details {
+    text-align: center;
+}
+
+.timeline-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.timeline-duration {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.timeline-description {
+    font-size: 0.9rem;
+    color: #afafaf;
+}
+
+/* Adjustments for Responsiveness */
+@media (max-width: 768px) {
+    .timeline {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .timeline-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .timeline-content {
+        width: 90%;
+    }
+
+    .timeline-circle {
+        top: -20px;
+    }
+}
+
+/* Project Section Styling */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.card {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* View Button Styling */
+.btn-primary {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #520fa1;
+    border-color: #520fa1;
+}
+
+.card-img-topp{
+    height: 10rem;
+    width: 10rem;
+    
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-section .row {
+        justify-content: center;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+}
+
+.tools-skills-section {
+    padding: 50px 0;
+    
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+
+.skill-item, .tool-item {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.skill-icon, .tool-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.progress {
+    height: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 10px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    border-radius: 5px;
+    transition: width 1s ease-in-out;
+}
+
+
+.contact-section{
+    background: rgba(255, 255, 255, 0.2); /* Transparent white background */
+    backdrop-filter: blur(10px); /* Glass blur effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.list-unstyled{
+    font-weight: 800;
+    color: #ffffff;
+    justify-content: space-around;
+
+}
+
