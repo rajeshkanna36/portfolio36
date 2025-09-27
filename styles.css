@@ -535,4 +535,21 @@ body {
     justify-content: space-around;
 
 }
+.image-container {
+    position: relative;
+    background: linear-gradient(180deg, #1e1e2e, #0f0f1e); /* Adjust to your theme */
+    border-radius: 0 0 50% 50% / 0 0 35% 35%; /* Creates curved oval bottom */
+    overflow: hidden;
+    width: 100%;
+    max-width: 400px; /* Adjust size */
+    margin: 0 auto;
+}
+
+.image-container img.hero-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
 
